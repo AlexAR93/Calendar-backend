@@ -12,7 +12,7 @@ export default app;
 
 //Aplico globalmente el m iddleware token validatos asi no tengo que ponerlo 1x1
 app.use(tokenValidator);
-//! Si quisiera que getevents sea publico pero luego los demas metodos no. /***Abajo**fon*/
+//! Si quisiera que getevents sea publico pero luego los demas metodos no. /***Abajo***/
 //*Aplico el app.use(tokenValidator) por debajo de getEvents
 
 //Obtener eventos

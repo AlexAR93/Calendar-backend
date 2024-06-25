@@ -3,7 +3,7 @@ import Event from "../models/Event.model.js"
 
 export const getEvents=async(req,res)=>{
 
-    //Luego en find agregar filtros e una implementación de paginación
+    //Luego en find podria agregar filtros e una implementación de paginación
     try {
         const events=await Event.find({ user: req.uid }).populate('user','name');
 

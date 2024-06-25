@@ -1,3 +1,4 @@
+import { __dirname } from "./dirname.js";
 import express from "express";
 import { configDotenv } from "dotenv";
 import cors from 'cors';
@@ -19,12 +20,13 @@ app.use(express.static('public'));
 app.use(express.json());
 
 //Rutas
-//TODO: auth // crear, login, renwe
-//TODO: CRUD: Eventos
 app.use('/api/auth',auth)
 app.use('/api/events',events)
-app.listen(process.env.PORT,()=>{
-//localhost:4001/api/events
+
+app.use('*',(req, res)=>{
+    res.sendFile(__dirname + '/public/index.html')
 });
 
-//!configDotenv().parsed.PORT
+app.listen(process.env.PORT,()=>{
+//https://calendar-mern-back.up.railway.app/api/auth
+});
